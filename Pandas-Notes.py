@@ -1,5 +1,6 @@
 #PANDAS NOTES :
 import pandas as pd
+import numpy as np
 
 
 #1-Creating a DataFrame:
@@ -18,7 +19,7 @@ import pandas as pd
 
 
 #3-Exploring Data in csv:-
-# data=pd.read_csv("Book1.csv")
+data=pd.read_csv("Book1.csv")
 # print(data.head(1))            #1st row only
 # print(data.tail(2))            #Last 2
 # print(data.info())               #Dtype ie info
@@ -30,7 +31,7 @@ import pandas as pd
 
 #4-Handling Duplicate Value in python:-
 
-# data=pd.read_excel("Duplicate.xlsx")
+data=pd.read_excel("Duplicate.xlsx")
 #Drop on bases of Primary Key Only:--
 # print(data.drop_duplicates("Emplyee id"))
 
@@ -40,6 +41,6 @@ import pandas as pd
 #5..Working With Missing data in python:
 data=pd.read_excel("Duplicate.xlsx")
 # print(data)
-# print(data.isnull()) #To Find any null value or not.
 # print(data.isnull().sum())  #give sum of no of nul value in column.
-print(data.dropna())   #drop a row if any clumn caary null value.
+# print(data.dropna())   #drop a row if any clumn caary null value.
+print(data.replace(np.nan,"69%"))
