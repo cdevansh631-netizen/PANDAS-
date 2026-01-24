@@ -57,12 +57,14 @@ import numpy as np
 
 #6--Column Transformation :--
 #It create a new column and give BONUS/No BONUS based on that that it get or not.
-df=pd.read_excel("Duplicate.xlsx")
-df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
-df.loc[(df["Bonus"]>0),"Get Bonus"]="Bonus"
-print(df)
+# df=pd.read_excel("Duplicate.xlsx")
+# df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
+# df.loc[(df["Bonus"]>0),"Get Bonus"]="Bonus"
+# print(df)
 
 
+data=pd.read_excel("Duplicate.xlsx")
+# data["Full name"]=data["First name"]+data["last name"]
 
 
-
+print(data)
