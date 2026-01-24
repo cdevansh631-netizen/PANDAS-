@@ -43,4 +43,16 @@ data=pd.read_excel("Duplicate.xlsx")
 # print(data)
 # print(data.isnull().sum())  #give sum of no of nul value in column.
 # print(data.dropna())   #drop a row if any clumn caary null value.
-print(data.replace(np.nan,"69%"))
+# print(data.replace(np.nan,"69%"))    #It Replace all nan value 69%
+
+#What if i want to replace nan only at one column at which nan occur.
+# data["Math"]=data["Math"].replace(np.nan,"68%")
+# print(data)
+# print(data.fillna(method="bfill")) #It fill nan value with nxt value to it.
+# print(data.fillna(method="ffill"))  #It fill nan value with value come before to it.
+
+
+
+
+#6--Column Transformation :--
+
