@@ -56,15 +56,29 @@ import numpy as np
 
 
 #6--Column Transformation :--
+#1--
 #It create a new column and give BONUS/No BONUS based on that that it get or not.
 # df=pd.read_excel("Duplicate.xlsx")
 # df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
 # df.loc[(df["Bonus"]>0),"Get Bonus"]="Bonus"
 # print(df)
 
+#2--
+# data=pd.read_excel("Duplicate.xlsx")
+# data["Full name"]=data["name"].str.capitalize()+" "+data["last name"]    #IT ceate a new column of full name.
+# print(data)
 
-data=pd.read_excel("Duplicate.xlsx")
-# data["Full name"]=data["First name"]+data["last name"]
+#3--
+# data=pd.DataFrame({"Month":["January","Febraury","MArch","April"]})
+# def extract(value):
+#     return value[0:3]
+# data["Short month"]=data["Month"].map(extract)
+# print(data)
 
 
-print(data)
+
+
+
+#7:----Group by in Pandas:--
+df=pd.read_excel("Duplicate.xlsx")
+
