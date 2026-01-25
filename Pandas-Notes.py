@@ -81,4 +81,4 @@ import numpy as np
 
 #7:----Group by in Pandas:--
 df=pd.read_excel("Duplicate.xlsx")
-
+print(df)
