@@ -80,5 +80,8 @@ import numpy as np
 
 
 #7:----Group by in Pandas:--
-df=pd.read_excel("Duplicate.xlsx")
-print(df)
+df=pd.DataFrame({"Chemistry":["Organic","Inorganic","Inorganic","Organic","Inorganic"],
+                 "Gender":["Male","Female","Female","Male","Female"]})
+# gp=df.groupby("Chemistry").agg({"Gender":"count"})
+# gp=df.groupby(["Chemistry","Gender"]).size()
+# print(gp)
