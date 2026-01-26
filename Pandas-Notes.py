@@ -80,8 +80,50 @@ import numpy as np
 
 
 #7:----Group by in Pandas:--
-df=pd.DataFrame({"Chemistry":["Organic","Inorganic","Inorganic","Organic","Inorganic"],
-                 "Gender":["Male","Female","Female","Male","Female"]})
+# df=pd.DataFrame({"EID":[123,123,456,788,456],"Chemistry":["Organic","Inorganic","Inorganic","Organic","Inorganic"],
+# "Gender":["Male","Female","Female","Male","Female"]})
 # gp=df.groupby("Chemistry").agg({"Gender":"count"})
-# gp=df.groupby(["Chemistry","Gender"]).size()
+# gp=df.groupby(["Chemistry","Gender"]).agg({"EID":"count"})  #Similarly for max,min,mean etc:
 # print(gp)
+ 
+
+ #8:--MERGE JOIN AND CONCATENATE IN PANDAS :
+
+#MERGE:----
+# CASE:1 if primary keyhas same.ie employe id
+# df1=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
+#                     "Name":["Amit","Abhay","Anni","Saksham","Raj","Dev"]
+#                     ,"Age":[23,54,2,45,67,87]})
+# df2=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
+#                     "Salary":[22000,40000,34500,34500,29999,90000]})
+# print(pd.merge(df1,df2,on = "Emp id"))  #it Merge two DataFrame. 
+
+# CASE:2 if df1 and df2 has different primary key.[it create new dataframe base on commain emplyee id os 1st and 2nd and of 1st not of 2nd 
+# df1=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
+#                      "Name":["Amit","Abhay","Anni","Saksham","Raj","Dev"]
+#                      ,"Age":[23,54,2,45,67,87]})
+# df2=pd.DataFrame({"Emp id":["C-101","C-106","C-103","C-107","C-105","C-108"],
+#                    "Salary":[22000,40000,34500,34500,29999,90000]})
+# print(pd.merge(left=df1,right=df2,on = "Emp id",how="left"))
+
+
+#JOIN:--
+# df1=pd.DataFrame({"Name":["Sunny","Dev","Mayank"]},index=[1,2,3])
+# df2=pd.DataFrame({"Marks":[98,78,89]},index=[1,2,7])
+# print(df1.join(df2))
+# print(df2.join(df1))
+
+
+#CONCATENATE:---
+# df1=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
+#                      "Name":["Amit","Abhay","Anni","Saksham","Raj","Dev"]
+#                      ,"Age":[23,54,2,45,67,87]})
+# df2=pd.DataFrame({"Emp id":["C-107","C-108","C-109","C-110","C-111","C-112"],
+#                      "Name":["Sanjay","Pradeep","Kartik","Devansh","Kalam","poppi"]
+#                   ,"Age":[12,13,42,56,65,34]})
+# print(pd.concat([df1,df2]))
+
+
+
+
+#9:--Comapare Dataframe in pandas:-
