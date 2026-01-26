@@ -209,12 +209,14 @@ import numpy as np
 
 #--11--[--Pivoting and Melting DataFrame--]
 #-Pivoting mean to Changing Data.ie-row into column or vica versa. For better Analysis.
-import pandas as pd
 
-df = pd.DataFrame({
-    "Month": ["Jan", "Jan", "Feb", "Feb"],
-    "Product": ["Phone", "Laptop", "Phone", "Laptop"],
-    "Sales": [100, 200, 150, 250]
-})
-#PIVOT:--
+# df = pd.DataFrame({
+#     "Month": ["Jan", "Jan", "Feb", "Feb"],
+#     "Product": ["Phone", "Laptop", "Phone", "Laptop"],
+#     "Sales": [100, 200, 150, 250]
+# })
 # print(df.pivot(index="Product",columns="Month",values="Sales"))
+
+#Melting:-Convert column into row:-Opposite of Pivot.
+# df=pd.DataFrame({"Name":["john","Ben","David","Peten"],"House":["red","blue","Green","red"],"Grade":["3rd","8th","9th","8th"]})
+# print(pd.melt(df,id_vars=["Name"],value_vars=["House","Grade"],var_name="Houses and Grade",value_name="Values"))
