@@ -126,4 +126,95 @@ import numpy as np
 
 
 
-#9:--Comapare Dataframe in pandas:-
+#9:--Uses of [--loc--] AND [--iloc--] :
+
+#LOC USES:--[--Location by Name--] --(Row,column)=(number,word/Name)
+#Loc is used to select row and column by label(name),not by Position.
+
+# df = pd.DataFrame({
+#     "Name": ["Sunny", "Dev", "Mayank"],
+#     "Marks": [98, 78, 89],
+#     "City": ["Delhi", "Mumbai", "Pune"]
+# })
+# print(df)
+
+#1--Select a Row:-
+# print(df.loc[1])
+
+#2--Select Multiple row:--
+# print(df.loc[1:2])  #2 and 3 Row.
+# print(df.loc[[0,2]])   #1 and 3 Row.
+
+#3--Select Column:--
+# print(df.loc[:,"City"])       #Single Column.
+# print(df.loc[:,["City","Marks"]])   #Multiple Column.
+
+#4--Multiple Row and Column:--
+# print(df.loc[1:2,["Name","City"]])
+
+#5--Filtering Using Condition:--
+# print(df.loc[df["Marks"]>85])
+
+#6--Update Value Using loc:--
+# df.loc[df["Name"]=="Dev","Marks"]=100
+# print(df)
+
+#7-Using loc with Custom Index:--
+# df2=df.set_index("Name")
+# print(df2)
+# print(df2.loc[["Dev","Mayank"]])
+
+
+
+
+#iloc:
+#Mean Index Location by Number.--(Row,column)=(number,number)
+
+# df = pd.DataFrame({
+#     "Name": ["Sunny", "Dev", "Mayank"],
+#     "Marks": [98, 78, 89],
+#     "City": ["Delhi", "Mumbai", "Pune"]
+# })
+
+#1--Select Row:
+# print(df.iloc[1])  #Single Row.
+# print(df.iloc[1:3]) #2 and 3 row .iloc exclude end pt.
+# print(df.iloc[[0,2]])  #1 and 3 row.
+
+#2-Specific row and column:
+# print(df.iloc[1:3,1:3])
+
+#Update Using iloc:
+# df.iloc[1,2]="Nanital"
+# print(df)
+
+
+
+
+
+#-10--[-- PANDAS | COMPARE DATAFRAME --]--:
+
+# df1=pd.DataFrame({"Fruit":["Mango","Apple","Orange","Banana"],"Price":[100,120,140,40],"Quantity-(KG)":[2,5,6,2]})
+# df2=df1.copy()
+# df2.loc[0,"Price"]=80
+# df2.loc[1,"Price"]=110
+# df2.loc[2,"Price"]=170
+# df2.loc[0,"Quantity-(KG)"]=7
+# df2.loc[1,"Quantity-(KG)"]=9
+# df2.loc[2,"Quantity-(KG)"]=7
+# print(df1.compare(df2,align_axis=0))  #Compare Only those value which Changes.--By default axis=1
+# print(df1.compare(df2,keep_shape=True))
+
+
+
+#--11--[--Pivoting and Melting DataFrame--]
+#-Pivoting mean to Changing Data.ie-row into column or vica versa. For better Analysis.
+import pandas as pd
+
+df = pd.DataFrame({
+    "Month": ["Jan", "Jan", "Feb", "Feb"],
+    "Product": ["Phone", "Laptop", "Phone", "Laptop"],
+    "Sales": [100, 200, 150, 250]
+})
+#PIVOT:--
+# print(df.pivot(index="Product",columns="Month",values="Sales"))
