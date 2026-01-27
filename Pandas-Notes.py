@@ -61,7 +61,7 @@ import numpy as np
 #1--
 #It create a new column and give BONUS/No BONUS based on that that it get or not.
 df=pd.read_excel("Duplicate.xlsx")
-df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
+# df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
 # df.loc[(df["Bonus"]>0),"Get Bonus"]="Bonus"
 print(df)
 
