@@ -20,6 +20,7 @@ import numpy as np
 
 #3-Exploring Data in csv:-
 # data=pd.read_csv("Book1.csv")
+# print(data)
 # print(data.head(1))            #1st row only
 # print(data.tail(2))            #Last 2
 # print(data.info())               #Dtype ie info
@@ -32,6 +33,7 @@ import numpy as np
 #4-Handling Duplicate Value in python:-
 
 # data=pd.read_excel("Duplicate.xlsx")
+# print(data)
 #Drop on bases of Primary Key Only:--
 # print(data.drop_duplicates("Emplyee id"))
 
@@ -58,10 +60,10 @@ import numpy as np
 #6--Column Transformation :--
 #1--
 #It create a new column and give BONUS/No BONUS based on that that it get or not.
-# df=pd.read_excel("Duplicate.xlsx")
-# df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
+df=pd.read_excel("Duplicate.xlsx")
+df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
 # df.loc[(df["Bonus"]>0),"Get Bonus"]="Bonus"
-# print(df)
+print(df)
 
 #2--
 # data=pd.read_excel("Duplicate.xlsx")
