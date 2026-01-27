@@ -190,14 +190,14 @@ import numpy as np
 
 #-10--[-- PANDAS | COMPARE DATAFRAME --]--:
 
-df1=pd.DataFrame({"Fruit":["Mango","Apple","Orange","Banana"],"Price":[100,120,140,40],"Quantity-(KG)":[2,5,6,2]})
-df2=df1.copy()
-df2.loc[0,"Price"]=80
-df2.loc[1,"Price"]=110
-df2.loc[2,"Price"]=170
-df2.loc[0,"Quantity-(KG)"]=7
-df2.loc[1,"Quantity-(KG)"]=9
-df2.loc[2,"Quantity-(KG)"]=7
+# df1=pd.DataFrame({"Fruit":["Mango","Apple","Orange","Banana"],"Price":[100,120,140,40],"Quantity-(KG)":[2,5,6,2]})
+# df2=df1.copy()
+# df2.loc[0,"Price"]=80
+# df2.loc[1,"Price"]=110
+# df2.loc[2,"Price"]=170
+# df2.loc[0,"Quantity-(KG)"]=7
+# df2.loc[1,"Quantity-(KG)"]=9
+# df2.loc[2,"Quantity-(KG)"]=7
 # print(df1.compare(df2,align_axis=0))  #Compare Only those value which Changes.--By default axis=1
 # print(df1.compare(df2,keep_shape=False))
 # print(df1)
@@ -207,11 +207,11 @@ df2.loc[2,"Quantity-(KG)"]=7
 #--11--[--Pivoting and Melting DataFrame--]
 #-Pivoting mean to Changing Data.ie-row into column or vica versa. For better Analysis.
 
-df = pd.DataFrame({
-    "Month": ["Jan", "Jan", "Feb", "Feb"],
-    "Product": ["Phone", "Laptop", "Phone", "Laptop"],
-    "Sales": [100, 200, 150, 250]
-})
+# df = pd.DataFrame({
+#     "Month": ["Jan", "Jan", "Feb", "Feb"],
+#     "Product": ["Phone", "Laptop", "Phone", "Laptop"],
+#     "Sales": [100, 200, 150, 250]
+# })
 # print(df)
 # print(df.pivot(index="Product",columns="Month",values="Sales"))
 
