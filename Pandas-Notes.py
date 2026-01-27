@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 
 
+
 #1-Creating a DataFrame:
 
 # Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["Chem","Physics","Math","Yoga"]}
@@ -60,14 +61,14 @@ import numpy as np
 #6--Column Transformation :--
 #1--
 #It create a new column and give BONUS/No BONUS based on that that it get or not.
-df=pd.read_excel("Duplicate.xlsx")
-# df.loc[(df["Bonus"]==0),"Get Bonus"]="No Bonus"
-# df.loc[(df["Bonus"]>0),"Get Bonus"]="Bonus"
-print(df)
+# df=pd.read_excel("Duplicate.xlsx")
+# df.loc[(df["Math"]<30),"Result"]="Failed"
+# df.loc[(df["Math"]>30),"Result"]="Pass"
+# print(df)
 
 #2--
 # data=pd.read_excel("Duplicate.xlsx")
-# data["Full name"]=data["name"].str.capitalize()+" "+data["last name"]    #IT ceate a new column of full name.
+# data["Full name"]=data["Name"].str.capitalize()+" "+data["last name"]    #IT ceate a new column of full name.
 # print(data)
 
 #3--
@@ -81,7 +82,7 @@ print(df)
 
 
 
-#7:----Group by in Pandas:--
+#7:-Z---Group by in Pandas:--
 # df=pd.DataFrame({"EID":[123,123,456,788,456],"Chemistry":["Organic","Inorganic","Inorganic","Organic","Inorganic"],
 # "Gender":["Male","Female","Female","Male","Female"]})
 # gp=df.groupby("Chemistry").agg({"Gender":"count"})
@@ -92,14 +93,7 @@ print(df)
  #8:--MERGE JOIN AND CONCATENATE IN PANDAS :
 
 #MERGE:----
-# CASE:1 if primary keyhas same.ie employe id
-# df1=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
-#                     "Name":["Amit","Abhay","Anni","Saksham","Raj","Dev"]
-#                     ,"Age":[23,54,2,45,67,87]})
-# df2=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
-#                     "Salary":[22000,40000,34500,34500,29999,90000]})
-# print(pd.merge(df1,df2,on = "Emp id"))  #it Merge two DataFrame. 
-
+# CASE:
 # CASE:2 if df1 and df2 has different primary key.[it create new dataframe base on commain emplyee id os 1st and 2nd and of 1st not of 2nd 
 # df1=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
 #                      "Name":["Amit","Abhay","Anni","Saksham","Raj","Dev"]
@@ -114,7 +108,7 @@ print(df)
 # df2=pd.DataFrame({"Marks":[98,78,89]},index=[1,2,7])
 # print(df1.join(df2))
 # print(df2.join(df1))
-
+# # print(df2)
 
 #CONCATENATE:---
 # df1=pd.DataFrame({"Emp id":["C-101","C-102","C-103","C-104","C-105","C-106"],
@@ -196,27 +190,29 @@ print(df)
 
 #-10--[-- PANDAS | COMPARE DATAFRAME --]--:
 
-# df1=pd.DataFrame({"Fruit":["Mango","Apple","Orange","Banana"],"Price":[100,120,140,40],"Quantity-(KG)":[2,5,6,2]})
-# df2=df1.copy()
-# df2.loc[0,"Price"]=80
-# df2.loc[1,"Price"]=110
-# df2.loc[2,"Price"]=170
-# df2.loc[0,"Quantity-(KG)"]=7
-# df2.loc[1,"Quantity-(KG)"]=9
-# df2.loc[2,"Quantity-(KG)"]=7
+df1=pd.DataFrame({"Fruit":["Mango","Apple","Orange","Banana"],"Price":[100,120,140,40],"Quantity-(KG)":[2,5,6,2]})
+df2=df1.copy()
+df2.loc[0,"Price"]=80
+df2.loc[1,"Price"]=110
+df2.loc[2,"Price"]=170
+df2.loc[0,"Quantity-(KG)"]=7
+df2.loc[1,"Quantity-(KG)"]=9
+df2.loc[2,"Quantity-(KG)"]=7
 # print(df1.compare(df2,align_axis=0))  #Compare Only those value which Changes.--By default axis=1
-# print(df1.compare(df2,keep_shape=True))
+# print(df1.compare(df2,keep_shape=False))
+# print(df1)
 
 
 
 #--11--[--Pivoting and Melting DataFrame--]
 #-Pivoting mean to Changing Data.ie-row into column or vica versa. For better Analysis.
 
-# df = pd.DataFrame({
-#     "Month": ["Jan", "Jan", "Feb", "Feb"],
-#     "Product": ["Phone", "Laptop", "Phone", "Laptop"],
-#     "Sales": [100, 200, 150, 250]
-# })
+df = pd.DataFrame({
+    "Month": ["Jan", "Jan", "Feb", "Feb"],
+    "Product": ["Phone", "Laptop", "Phone", "Laptop"],
+    "Sales": [100, 200, 150, 250]
+})
+# print(df)
 # print(df.pivot(index="Product",columns="Month",values="Sales"))
 
 #Melting:-Convert column into row:-Opposite of Pivot.
