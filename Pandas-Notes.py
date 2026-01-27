@@ -218,3 +218,28 @@ import numpy as np
 #Melting:-Convert column into row:-Opposite of Pivot.
 # df=pd.DataFrame({"Name":["john","Ben","David","Peten"],"House":["red","blue","Green","red"],"Grade":["3rd","8th","9th","8th"]})
 # print(pd.melt(df,id_vars=["Name"],value_vars=["House","Grade"],var_name="Houses and Grade",value_name="Values"))
+
+
+
+#-12:--SORTING-:
+
+# df = pd.DataFrame({
+#     "Name": ["Dev", "Aman", "Neha", "Riya", "Rahul"],
+#     "Total Mark": [248, 248, 240, 235, 240],
+#     "Gender": ["Male", "Male", "Female", "Female", "Male"]
+# })
+# # print(df)
+# print(df.sort_values("Total Mark",ascending=False))  #By default it is True:-
+# print(df.sort_values(["Total Mark", "Name"], ascending=[False, True])) #First sorted by Total Mark descending If Total Mark is same → sorted by Name ascending
+
+
+#-13--[--idmax/idmin--]-
+# idxmin() → Returns the index/row label of the minimum value
+# idxmax() → Returns the index/row label of the maximum value
+
+# marks = pd.Series([78, 92, 85, 64, 99], index=["Aman", "Dev", "Neha", "Riya", "Rahul"])
+
+# print("Marks:\n", marks)
+
+# print("Highest mark index:", marks.idxmax())
+# print("Lowest mark index:", marks.idxmin())
