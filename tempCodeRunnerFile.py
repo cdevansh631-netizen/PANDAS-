@@ -1,1 +1,0 @@
-print("MOST CONSISTANT :-\n",df["Std_dev"].idxmax())

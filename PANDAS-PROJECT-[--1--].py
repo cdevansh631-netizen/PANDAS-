@@ -55,33 +55,34 @@ print(df.loc[df["Average Mark"]<60,"Name"].to_string(index="False"))
 print("No of Student Failed :",(df["Average Mark"]<60).sum(),"\n")
 
 #SUBJECT WISE AVERAGE MARKS:-
-Math_Avg=df["Math"].mean()
-Science_Avg=df["Science"].mean()
-English_Avg=df["English"].mean()
-print("MATH AVERAGE MARKS :",Math_Avg)
-print("SCIENCE AVERAGE MARKS :",Science_Avg)
-print("ENGLISH AVERAGE MARKS :",English_Avg,"\n")
-print("Most Difficul Subject",df[["Math","Science","English"]].mean().idxmin(),"\n")
+# Math_Avg=df["Math"].mean()
+# Science_Avg=df["Science"].mean()
+# English_Avg=df["English"].mean()
+# print("MATH AVERAGE MARKS :",Math_Avg)
+# print("SCIENCE AVERAGE MARKS :",Science_Avg)
+# print("ENGLISH AVERAGE MARKS :",English_Avg,"\n")
+# print("Most Difficul Subject",df[["Math","Science","English"]].mean().idxmin(),"\n")
+print(df[["Math","Science","English"]].mean().to_frame("Average Marks"))
 
-#GENDER WISE TOPPER AND AVERAGE MARKS:--
-gp=df.groupby("Gender").agg({"Average Mark":"mean"}).round(2)
-print(gp)
+# #GENDER WISE TOPPER AND AVERAGE MARKS:--
+# gp=df.groupby("Gender").agg({"Average Mark":"mean"}).round(2)
+# print(gp)
 
-#GENDER WISE TOPPER:
-male=df[df["Gender"]=="Male"]
-female=df[df["Gender"]=="Female"]
-male_max=male["Total Mark"].max()
-female_max=female["Total Mark"].max()
-print("Male Toppper : ",", ".join(male[male["Total Mark"]==male_max]["Name"]))
-print("Female Topper:", ", ".join(female[female["Total Mark"] == female_max]["Name"]),"\n")
+# #GENDER WISE TOPPER:
+# male=df[df["Gender"]=="Male"]
+# female=df[df["Gender"]=="Female"]
+# male_max=male["Total Mark"].max()
+# female_max=female["Total Mark"].max()
+# print("Male Toppper : ",", ".join(male[male["Total Mark"]==male_max]["Name"]))
+# print("Female Topper:", ", ".join(female[female["Total Mark"] == female_max]["Name"]),"\n")
 
-#SORTING:--
-print(df.sort_values("Total Mark",ascending=False),"\n")
+# #SORTING:--
+# print(df.sort_values("Total Mark",ascending=False),"\n")
 
-#LIST OF STUDENT SCORING MORE THAN 85:-
-print("STUDENT SCORE ABOVE 85 :--")
-print(df.loc[df["Total Mark"]>85]["Name"].to_string(index=False))
+# #LIST OF STUDENT SCORING MORE THAN 85:-
+# print("STUDENT SCORE ABOVE 85 :--")
+# print(df.loc[df["Total Mark"]>85]["Name"].to_string(index=False))
 
-#MOST CONSISTANT:--
-df["Std_dev"]=df[["Math","Science","English"]].std(axis=1).round(2)
-print("MOST CONSISTANT :-\n",df.loc[df["Std_dev"]==df["Std_dev"].min(),"Name"].to_string(index=False))
+# #MOST CONSISTANT:--
+# df["Std_dev"]=df[["Math","Science","English"]].std(axis=1).round(2)
+# print("MOST CONSISTANT :-\n",df.loc[df["Std_dev"]==df["Std_dev"].min(),"Name"].to_string(index=False))

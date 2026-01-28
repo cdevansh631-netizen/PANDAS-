@@ -243,3 +243,9 @@ import numpy as np
 
 # print("Highest mark index:", marks.idxmax())
 # print("Lowest mark index:", marks.idxmin())
+
+
+#-14-:--
+# to_frame() converts a pandas Series into a DataFrame
+# to_string() converts pandas data into plain text for printing
+# ie-use it like :--print(df[["Math","Science","English"]].mean().to_frame("Average Marks"))
