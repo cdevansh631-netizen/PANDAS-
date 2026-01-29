@@ -34,3 +34,47 @@ df = pd.DataFrame({
     "Selling_Price": [60000, 20000, 30000, 62000, 21000, 29000, 61000, 20500],
     "Cost_Price": [45000, 15000, 22000, 47000, 16000, 23000, 46000, 15500]
 })
+
+# print(df)
+#DATA TYPE:--
+# print(df.info())
+
+#REVENUE COLUMN:--
+df.loc[:,"REVENUE"]=df.loc[:,"Units_Sold"]*df.loc[:,"Selling_Price"]
+
+#COST COLUMN:--
+df.loc[:,"COST"]=df.loc[:,"Units_Sold"]*df.loc[:,"Cost_Price"]
+
+#PROFIT COLUMN:--
+df.loc[:,"PROFIT"]=df.loc[:,"REVENUE"]-df.loc[:,"COST"]
+
+#PROFIT MARGIN COLUMN:--
+df.loc[:,"PROFIT MARGIN"]=((df.loc[:,"PROFIT"]/df.loc[:,"REVENUE"])*100).round(2)
+print(df,"\n")
+
+#TOP/LOW PROFIT PRODUCT:--
+print("TOP PROFIT PRODUCTS :",df.groupby("Product")["PROFIT"].sum().idxmax())
+print("LOW PROFIT PRODUCT :",df.groupby("Product")["PROFIT"].sum().idxmin(),"\n")
+
+#PRODUCT WITH PROFIT LESS THAN 50000:-
+print("PRODUCT WITH PROFIT LESS THAN 50000:--")
+print(df.loc[df["PROFIT"]<50000,["Product","Region"]].to_string(index=False),"\n")
+
+#LOW PROFIT ENTERIES:-
+print("NUMBER OF LOW PROFIT ENTRIES:--")
+print(df.loc[df["PROFIT"]<50000,["Product"]].count().to_string(index=False),"\n")
+
+#CATEGORY WISE TOTAL REVENUE:-
+print("CATEGORY WISE TOTAL REVENUE:--")
+print(df.groupby("Category").agg({"REVENUE":"sum"}),"\n")
+
+#PRODUCT WISE AVERAGE PROFIT:--
+print("PRODUCT WISE AVERAGE PROFIT:--")
+print(df.groupby("Product").agg({"PROFIT":"mean"}).round(2),"\n")
+
+#Region Wise Top Profit Product:--
+print("Region Wise Top Profit Product:--")
+print(df.loc[df.groupby("Region")["PROFIT"].idxmax(),["Region","Product"]].to_string(index=False),"\n")
+
+#SORTED ORDER OF PROFIT:--
+print(df.sort_values())
