@@ -53,24 +53,33 @@ df.loc[df["Performance_Score"]<85,"Bonus"]=0.05*df["Salary"]
 
 #Total compensations:
 df['Total Compensation']=df["Salary"]+df["Bonus"]
-print(df,"\n")
+# print(df,"\n")
 
 #Top/Least Performer:--
-print("TOP PERFORMER :--")
-print(df.loc[df["Performance_Score"]==df["Performance_Score"].max(),"Name"].to_string(index=False))
+# print("TOP PERFORMER :--")
+# print(df.loc[df["Performance_Score"]==df["Performance_Score"].max(),"Name"].to_string(index=False))
  
-print("LEAST PERFORMER :--")
-print(df.loc[df["Performance_Score"]==df["Performance_Score"].min(),"Name"].to_string(index=False),"\n")
+# print("LEAST PERFORMER :--")
+# print(df.loc[df["Performance_Score"]==df["Performance_Score"].min(),"Name"].to_string(index=False),"\n")
 
 
 #List oof Employee HAving Performance <60:
-print("STUDENT HAVING PERFORMANCE LESS THAN 60:--")
-print(df.loc[df["Performance_Score"]<60,"Name"].to_string(index=False))
-print("NO OF STUDENT UNDERPERFORMING :",df.loc[df["Performance_Score"]<60,"Name"].count(),"\n")
+# print("STUDENT HAVING PERFORMANCE LESS THAN 60:--")
+# print(df.loc[df["Performance_Score"]<60,"Name"].to_string(index=False))
+# print("NO OF STUDENT UNDERPERFORMING :",df.loc[df["Performance_Score"]<60,"Name"].count(),"\n")
 
 
 #Department Wise Average Salary:
-print(df.groupby("Department").agg({"Salary":"mean"}))
+print(df.groupby("Department").agg({"Salary":"mean"}),"\n")
 
 #Department Wise Top Performer:-
-print()
+print("DEPARTMENT WISE TOP PERFORMER :--")
+finance=df[df["Department"]=="Finance"]
+HR=df[df["Department"]=="HR"]
+IT=df[df["Department"]=="IT"]
+finance_max=finance["Performance_Score"].max()
+HR_max=HR["Performance_Score"].max()
+IT_max=IT["Performance_Score"].max()
+print("TOP PERFORMER OF Finance : ",", ".join(finance[finance["Performance_Score"]==finance_max]["Name"]))
+print("TOP PERFORMER OF HR : ",", ".join(HR[HR["Performance_Score"]==HR_max]["Name"]))
+print("TOP PERFORMER OF IT : ",", ".join(IT[IT["Performance_Score"]==IT_max]["Name"]),"\n")

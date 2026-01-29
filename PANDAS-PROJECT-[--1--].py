@@ -33,9 +33,9 @@ df= pd.DataFrame({
     "English": [98, 75, 68, 92, 58],
     "Gender": ["Male", "Male", "Female", "Female", "Male"]
 })
-# print(df)
-#--DATA TYPE:
-# print(df.info())
+print(df)
+# --DATA TYPE:
+print(df.info())
 
 #Adding new column of Total Mark And Avg Mark:
 df["Total Mark"]=df["Math"]+df["Science"]+df["English"]
