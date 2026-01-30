@@ -35,9 +35,8 @@ df = pd.DataFrame({
     "Cost_Price": [45000, 15000, 22000, 47000, 16000, 23000, 46000, 15500]
 })
 
-# print(df)
 #DATA TYPE:--
-# print(df.info())
+print(df.info(),"\n")
 
 #REVENUE COLUMN:--
 df.loc[:,"REVENUE"]=df.loc[:,"Units_Sold"]*df.loc[:,"Selling_Price"]
@@ -50,9 +49,8 @@ df.loc[:,"PROFIT"]=df.loc[:,"REVENUE"]-df.loc[:,"COST"]
 
 #PROFIT MARGIN COLUMN:--
 df.loc[:,"PROFIT MARGIN"]=((df.loc[:,"PROFIT"]/df.loc[:,"REVENUE"])*100).round(2)
-print(df,"\n")
 
-#TOP/LOW PROFIT PRODUCT:--
+# #TOP/LOW PROFIT PRODUCT:--
 print("TOP PROFIT PRODUCTS :",df.groupby("Product")["PROFIT"].sum().idxmax())
 print("LOW PROFIT PRODUCT :",df.groupby("Product")["PROFIT"].sum().idxmin(),"\n")
 
@@ -68,7 +66,7 @@ print(df.loc[df["PROFIT"]<50000,["Product"]].count().to_string(index=False),"\n"
 print("CATEGORY WISE TOTAL REVENUE:--")
 print(df.groupby("Category").agg({"REVENUE":"sum"}),"\n")
 
-#PRODUCT WISE AVERAGE PROFIT:--
+# PRODUCT WISE AVERAGE PROFIT:--
 print("PRODUCT WISE AVERAGE PROFIT:--")
 print(df.groupby("Product").agg({"PROFIT":"mean"}).round(2),"\n")
 
@@ -77,4 +75,23 @@ print("Region Wise Top Profit Product:--")
 print(df.loc[df.groupby("Region")["PROFIT"].idxmax(),["Region","Product"]].to_string(index=False),"\n")
 
 #SORTED ORDER OF PROFIT:--
-print(df.sort_values())
+print(df.sort_values("PROFIT",ascending=False),"\n")
+
+#ORDER ID WHERE PROFIT MARGIN >25.:---
+print("ORDER ID WHERE PROFIT MARGIN >25:-")
+print(df.loc[(df["PROFIT MARGIN"]>25),"Order_ID"].to_string(index=False),"\n")
+
+#MOST PROFITABLE PRODUCT:--
+print("MOST PROFITABLE PRODUCT:-")
+print(df.loc[df["PROFIT MARGIN"]==df["PROFIT MARGIN"].max(),"Product"].to_string(index=False),"\n")
+
+#REGION WITH LEAST PROFIT:- 
+print("REGION WITH LEAST PROFIT :-")
+print(df.groupby('Region')["PROFIT"].sum().idxmin(),"\n")
+
+#BEST VALUE FOR MONEY:--
+#HERE FOR SELLER VALUE FOR MONEY PRODUCT WHERE RATIO OF PROFIT:Units_sold higher as possible:-
+print("BEST VALUE FOR MONEY PRODUCT FOR SELLER:-")
+df["Profit:Units_Sold"]=(df["PROFIT"]/df["Units_Sold"]) 
+print(df.groupby("Product")["Profit:Units_Sold"].max().idxmax())
+
