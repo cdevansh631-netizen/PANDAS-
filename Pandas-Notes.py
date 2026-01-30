@@ -1,12 +1,10 @@
 #PANDAS NOTES :
 import pandas as pd
-import numpy as np
-
 
 
 #1-Creating a DataFrame:
 
-# Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["Chem","Physics","Math","Yoga"]}
+Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["Chem","Physics","Math","Yoga"]}
 # print(pd.DataFrame(Data))
 
 
