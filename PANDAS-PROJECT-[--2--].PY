@@ -3,7 +3,7 @@
 # 🟡 Basic Understanding
 #-1-View the dataset
 #-2-Check data types
-#-3-Get basic statistics
+#-3-Get basic statistics.
 
 # 🟡 Core Analysis
 #-4-Add Bonus column
