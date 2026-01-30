@@ -1,6 +1,6 @@
 # MINI PROJECT 3:--[--PRODUCT SALES AND PROFIT ANALYZER--]:--
 
-#1-> View the dataset
+#1-> View the dataset.
 #2-> Check data types
 #3-> Get basic statistics
 #4-> Add Revenue column
