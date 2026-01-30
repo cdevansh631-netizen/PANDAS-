@@ -249,3 +249,17 @@ import numpy as np
 # to_frame() converts a pandas Series into a DataFrame
 # to_string() converts pandas data into plain text for printing
 # ie-use it like :--print(df[["Math","Science","English"]].mean().to_frame("Average Marks"))
+
+
+
+#15:--
+# | Method             | Returns      | Interview-friendly |
+# | ------------------ | ------------ | ------------------ |
+# | DataFrame + idxmax | Series       | ❌ less clean      |
+# | Series + idxmax    | Single value | ✅ best            |
+#Series Approach + idxmax:-GIVES SINGLE VALUE
+# df.groupby("Region")["PROFIT"].sum().idxmax()
+
+#DATAFRAME + idxmax:-RETURN A SERIES:
+#df.groupby("Region").agg({"PROFIT":"sum"}).idxmax()
+
