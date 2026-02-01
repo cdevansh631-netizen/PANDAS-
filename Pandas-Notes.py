@@ -45,6 +45,8 @@ Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["C
 # print(data.isnull().sum())  #give sum of no of nul value in column.
 # print(data.dropna())   #drop a row if any clumn caary null value.
 # print(data.replace(np.nan,"69%"))    #It Replace all nan value 69%
+#print(data.fillna(0,inplace=True))
+#df.rename(columns={"Customer ID":"Customer_ID","Customer Name":"Customer_Name"},inplace=True)  #RENAME COLUMN NAME.
 
 #What if i want to replace nan only at one column at which nan occur.
 # data["Math"]=data["Math"].replace(np.nan,"68%")
