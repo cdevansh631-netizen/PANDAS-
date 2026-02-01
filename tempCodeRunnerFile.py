@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 
-#MINI PROJECT 4:--[--Sales Performance & Profit Analysis--] :-
-
 #View first & last 3 rows
 #Check shape, columns, data types
 #Check missing values
@@ -133,5 +131,5 @@ print(df[df["Region"]=="North"].groupby("Product")["PROFIT"].sum().idxmax(),"\n"
 
 #CRITERIA COLUMN:-
 # print(df[["Discount","PROFIT"]].head())
-print(df.groupby("Discount")["PROFIT"].mean().sort_index().to_string())
-print("BY ANALYZING WE CAN SAY THAT PROFIT GOES DOWN IF WE GIVE LOW DISCOUNT BUT IF DISOUNT INCREASE TO HIGHER DISCOUNT THEN PROFIT ALSO INCREASE.")
+print(df.groupby("Discount")["PROFIT"].mean().sort_index())
+print("BY ANALYZING WE CAN SAY THAT PROFIT GOES DOWN IF WE GIVE LOW DISCOUNT BUT IF DISOUNT INCREASE TO HIGHER DISCOUNT THEN PROFIT ALSO INCREASE")
