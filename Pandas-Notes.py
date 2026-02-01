@@ -261,3 +261,10 @@ Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["C
 #DATAFRAME + idxmax:-RETURN A SERIES:
 #df.groupby("Region").agg({"PROFIT":"sum"}).idxmax()
 
+
+#To see Columns:-
+# print(df.columns)  #GIVE ALL COLUMN NAME.
+
+# print(df.head().T)  #Give all Column nam
+
+#print(df.iloc[:,0:3])  #GIVES COLUMN U WANT BEST WAY.
