@@ -1,1 +1,0 @@
-df=df[~df["InvoiceNo"].astype(str).str.startswith("C")]
