@@ -4,7 +4,7 @@ import pandas as pd
 
 #1-Creating a DataFrame:
 
-Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["Chem","Physics","Math","Yoga"]}
+# Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["Chem","Physics","Math","Yoga"]}
 # print(pd.DataFrame(Data))
 
 
@@ -266,7 +266,28 @@ Data={"Name":["Dev","Raj","Anaya","Manay"],"Roll_No":[43,54,23,91],"Subject":["C
 
 #To see Columns:-
 # print(df.columns)  #GIVE ALL COLUMN NAME.
-
 # print(df.head().T)  #Give all Column nam
-
 #print(df.iloc[:,0:3])  #GIVES COLUMN U WANT BEST WAY.
+
+
+# df = pd.DataFrame({
+#     "Emp_ID": [101, 102, 103, 104, 105, 106],
+#     "Name": ["Amit", "Neha", "Rohit", "Priya", "Karan", "Anjali"],
+#     "Department": ["IT", "HR", "IT", "Finance", "HR", "Finance"],
+#     "Experience": [2, 5, 3, 7, 1, 4],   
+#     "Performance_Score": [78, 88, 65, 92, 55, 81],
+#     "Salary": [40000, 55000, 42000, 75000, 38000, 60000]
+# })
+#Value_Count :-[--COUNT NO HOW MANY TIMES DOES A CATEGORY APPEAR--]
+# print(df["Department"].value_counts())
+
+#nunique :-[--COUNT IN DEPARTMENT COLUMN HOW MANY UNIQUE VALUE THERE--]
+# print(df["Department"].nunique())
+
+#nlargest/nsmallest :-[--IT SORT ACC TO U WANT HIGHEST __ OR LOWEST __--]
+# print(df.nlargest(2,"Salary")[["Name","Salary"]])
+
+
+
+
+
